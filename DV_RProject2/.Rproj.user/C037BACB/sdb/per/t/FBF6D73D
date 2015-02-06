@@ -1,0 +1,17 @@
+{
+    "contents" : "p1 <- ggplot (df, aes (x = ISOTOPENAME, fill = ISOTOPENAME)) + geom_histogram ()\np1 + facet_wrap (~UNITS)\n\nalbanyemp <- subset(df, SAMPLELOCATION == \"ALBANY, EMPIRE STATE PLAZA\")\nalbanyemp\nhead (albanyemp)\np2 <- ggplot (albanyemp, aes (x = ISOTOPENAME, fill = ISOTOPENAME)) + geom_histogram ()\np2 + facet_wrap (~UNITS)\n\npci <- subset (df, UNITS == \"pCi/L\")\np3 <- ggplot (pci, aes (x = , y = )) + geom_ ()\n",
+    "created" : 1423234674721.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "4209499744",
+    "id" : "FBF6D73D",
+    "lastKnownWriteTime" : 1423239439,
+    "path" : "~/Documents/DataVisualization/DV_RProject2/DV_RProject2/02 Visualizations/visuals.R",
+    "project_path" : "02 Visualizations/visuals.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

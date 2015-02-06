@@ -1,0 +1,16 @@
+{
+    "contents" : "p1 <- ggplot (df_combined, aes(x= as.Date(ORDER_DATE, \"%Y-%m-%d\"), y = as.Date(SHIPPED_DATE, \"%Y-%m-%d\"))) + geom_point(aes(color = as.factor(UNIT_PRICE)))\np1 + facet_wrap (~ CUSTOMER_STATE) \n",
+    "created" : 1423236958684.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3354127439",
+    "id" : "1A629497",
+    "lastKnownWriteTime" : 1423101344,
+    "path" : "~/Documents/DataVisualization/DV_RProject1/02 Visualizations/plot 1.R",
+    "project_path" : null,
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

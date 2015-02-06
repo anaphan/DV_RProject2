@@ -1,0 +1,38 @@
+---
+title: "Project 2"
+author: "Ana Phan & Parth Patel"
+date: "February 6, 2015"
+output: html_document
+---
+
+###Dataframe of Environmental Radiation
+```{r, echo = FALSE}
+library ("bitops")
+library ('ggplot2')
+library ('grid')
+library ('plyr')
+library ('RCurl')
+library ('reshape2')
+```
+
+First, import the .csv file into SQL. Next, open R studio and create the dataframe by using the following SQL query:
+
+``` 
+df <- data.frame(eval(parse(text=substring(getURL(URLencode('http://129.152.144.84:5001/rest/native/?query="select * from TITLE"'), httpheader=c(DB='jdbc:oracle:thin:@129.152.144.84:1521:ORCL', USER='C##cs329e_anp2222', PASS='orcl_anp2222', MODE='native_mode', MODEL='model', returnFor = 'R', returnDimensions = 'False'), verbose = TRUE), 1, 2^31-1))))
+```
+
+**Replace TITLE** with the appropriate title given to the imported dataset (in this case, we will be using "rad"). 
+
+
+A subset of the dataframe is shown below. 
+```{r, echo = FALSE}
+source("../01 Data/dataframe.R")
+```
+``` {r}
+head (df)
+```
+
+
+This "dataset measures the air, water, milk, and fallout at Background sites around NYS to determine the normal levels of radioactivity and monitors the influence of human activities on these levels. Background samples are collected statewide from several sites which are not expected to be influenced by discharges of radionuclides to the environment. The site numbers represent the location from which samples are collected". 
+(http://catalog.data.gov/dataset/environmental-radiation-surveillance-background-site-readings-beginning-2009)
+
