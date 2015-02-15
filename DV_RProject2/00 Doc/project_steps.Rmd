@@ -13,6 +13,8 @@ library ('grid')
 library ('plyr')
 library ('RCurl')
 library ('reshape2')
+library ('dplyr')
+library ('tidyr')
 ```
 
 First, import the .csv file into SQL. Next, open R studio and create the dataframe by using the following SQL query:
@@ -29,7 +31,7 @@ A subset of the dataframe is shown below.
 source("../01 Data/dataframe.R")
 ```
 ``` {r}
-head (df)
+df <- tbl_df
 ```
 
 

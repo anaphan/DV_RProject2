@@ -1,0 +1,1 @@
+data_wrangle_vis1 <- df  %>% group_by(SAMPLETYPE, SAMPLELOCATION, ISOTOPENAME)  %>% summarise(Picocurries_per_Liter = mean(GRAPHVALUE))  %>% ggplot(aes(x=SAMPLETYPE, y=Picocurries_per_Liter, color = ISOTOPENAME)) + geom_point() + facet_wrap(~SAMPLELOCATION)
