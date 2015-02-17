@@ -4,8 +4,6 @@ author: "Ana Phan & Parth Patel"
 date: "February 6, 2015"
 output: html_document
 ---
-
-###Dataframe of Environmental Radiation
 ```{r, echo = FALSE}
 library ("bitops")
 library ('ggplot2')
@@ -16,25 +14,55 @@ library ('reshape2')
 library ('dplyr')
 library ('tidyr')
 ```
+***
+***
 
-First, import the .csv file into SQL. Next, open R studio and create the dataframe by using the following SQL query:
+###Importing the Dataframe
+
+
+#####First, import the .csv file into SQL. 
+Click the (+) to access the dropdown file system of the connection in which you would like to import the data.Right click the __Tables__ folder and select the __Import Data__ selection.
+![](./csv_to_sql1.png)
+
+Find the .csv file you want to work with and select it for import.
+
+![](./csv_to_sql2.png)
+
+Run through the Data Import Wizard, giving the table a name and identifying the types that each column represent.
+
+
+![](./csv_to_sql3.png)
+
+Once you are finished with this, the data has been stored in the database.
+
+
+In our particular case, the data has been stored on a cloud-based database. An SQL query will be used to extract the dataframe from the database for access during the project. The following query is used:
 
 ``` 
-df <- data.frame(eval(parse(text=substring(getURL(URLencode('http://129.152.144.84:5001/rest/native/?query="select * from TITLE"'), httpheader=c(DB='jdbc:oracle:thin:@129.152.144.84:1521:ORCL', USER='C##cs329e_anp2222', PASS='orcl_anp2222', MODE='native_mode', MODEL='model', returnFor = 'R', returnDimensions = 'False'), verbose = TRUE), 1, 2^31-1))))
+df <- data.frame(eval(parse(text=substring(getURL(URLencode('http://129.152.144.84:5001/rest/native/?query="select * from rad"'), httpheader=c(DB='jdbc:oracle:thin:@129.152.144.84:1521:ORCL', USER='C##cs329e_anp2222', PASS='orcl_anp2222', MODE='native_mode', MODEL='model', returnFor = 'R', returnDimensions = 'False'), verbose = TRUE), 1, 2^31-1))))
 ```
+***
+***
 
-**Replace TITLE** with the appropriate title given to the imported dataset (in this case, we will be using "rad"). 
+###Environmental Radiation in the State of New York
 
 
-A subset of the dataframe is shown below. 
+A subset of the dataframe is shown below.
 ```{r, echo = FALSE}
 source("../01 Data/dataframe.R")
+
 ```
-``` {r}
-df <- tbl_df
+```{r}
+head(df)
 ```
 
 
 This "dataset measures the air, water, milk, and fallout at Background sites around NYS to determine the normal levels of radioactivity and monitors the influence of human activities on these levels. Background samples are collected statewide from several sites which are not expected to be influenced by discharges of radionuclides to the environment. The site numbers represent the location from which samples are collected". 
 (http://catalog.data.gov/dataset/environmental-radiation-surveillance-background-site-readings-beginning-2009)
+
+***
+***
+
+###Data Wrangling: Making Sense of the Data.
+
 
