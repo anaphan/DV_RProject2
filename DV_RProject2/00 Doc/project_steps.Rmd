@@ -65,4 +65,11 @@ This "dataset measures the air, water, milk, and fallout at Background sites aro
 
 ###Data Wrangling: Making Sense of the Data.
 
+```{r}
+source("../02 Data Wrangling/data_wrange1.R")
 
+```
+```{r}
+source("../02 Data Wrangling/data_wrange2.R")
+
+```
