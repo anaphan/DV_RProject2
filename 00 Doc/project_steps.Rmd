@@ -4,6 +4,8 @@ author: "Ana Phan & Parth Patel"
 date: "February 6, 2015"
 output: html_document
 ---
+
+#####Library Calls
 ```{r, echo = FALSE}
 library ("bitops")
 library ('ggplot2')
@@ -65,11 +67,26 @@ This "dataset measures the air, water, milk, and fallout at Background sites aro
 
 ###Data Wrangling: Making Sense of the Data.
 
+####Data Wrangle 1: Sample Type vs. Level of Radiation (Picocurries/Liter) Faceted by State
+This visualization shows the different isotope types based on their sample type and radiation levels, separated by locations. Based on the data, we can see that at the Albany Empire State Plaza (plot 1), there are multiple isotopes found in milk and water, more than in any other location sampled. Also for Albany Health Department (plot 2), we find that air and fallout sample types contain a large variation of isotopes as well. 
 ```{r}
-source("../02 Data Wrangling/data_wrange1.R")
+source("../02 Data Wrangling/data_wrangle1.R")
 
+data_wrangle_vis1
 ```
-```{r}
-source("../02 Data Wrangling/data_wrange2.R")
 
+####Data Wrangle 2: Location of Sample vs. Amount of Unique Isotopes Present
+This visualization presents each location sampled with the unique amount of isotopes present. Here we can see again, in a different perspective, that the Albany Empire State Plaza and the Albany Health Department both have high variation of isotopes whereas all other locations sampled have 3 different isotopes present.
+```{r}
+source("../02 Data Wrangling/data_wrangle2.R")
+
+data_wrangle_vis2
+```
+
+####Data Wrangle 3: Isotope vs. Amount of Samples Taken
+This data visualization presents each isotope recorded along with how many samples of each were taken. Each isotope is grouped by the type of sample. Here we can clearly see that for 8 different isotopes, the most amount of samples were taken from water.
+```{r}
+source("../02 Data Wrangling/data_wrangle3.R")
+
+data_wrangle_vis3
 ```

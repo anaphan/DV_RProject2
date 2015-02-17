@@ -1,0 +1,1 @@
+data_wrangle_vis3 <- df  %>% group_by(ISOTOPENAME, SAMPLETYPE)  %>% summarise(sample_amounts = sum(SAMPLETYPE))  %>% ggplot(aes(x=ISOTOPENAME, y=sample_amounts, color = SAMPLETYPE)) + geom_point() + labs(x = "Isotopes", y = "Amount of Samples Taken")

@@ -1,1 +1,1 @@
-data_wrangle_vis2 <- df  %>%  group_by(SAMPLELOCATION, ISOTOPENAME) %>% summarise(records = n()) %>%  ggplot(aes( x=SAMPLELOCATION, fill=SAMPLELOCATION)) + geom_bar(stat = "bin", width = 0.5)
+data_wrangle_vis2 <- df  %>%  group_by(SAMPLELOCATION, ISOTOPENAME) %>% summarise(records = n()) %>%  ggplot(aes( x=SAMPLELOCATION)) + geom_bar(stat = "bin", width = 0.5) + labs(x = "Location of Sample", y = "Amount of Unique Isotopes Present")
